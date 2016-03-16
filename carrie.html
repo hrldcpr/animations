@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/javascript">
+    var IMGS = ["carrie-35.jpg", "carrie-36.jpg", "carrie-37.jpg"];
+    var current = 0;
+
+    function nextImg() {
+      current += (current==0 || !(current==IMGS.length-1 || Math.random()<0.5)) ? 1 : -1;
+      document.getElementById("img").src = IMGS[current];
+    }
+
+    window.onload = function() {
+      nextImg();
+      setInterval(nextImg, 500);
+    };
+  </script>
+</head>
+<body>
+  <img id="img"/>
+</body>
+</html>
